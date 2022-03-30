@@ -15,6 +15,7 @@
             @endif
             <form action="{{ route('admin.category.update', ['id' => $viewData['category']->getId()]) }}" method="POST">
                 @csrf
+                @method('PUT')
                 <div class="col">
                     <div class="mb-3 row">
                         <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Description</label>

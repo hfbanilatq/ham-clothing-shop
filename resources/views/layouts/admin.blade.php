@@ -13,10 +13,10 @@
 </head>
 
 <body>
-    <div class="row g-0">
+    <div class="row g-0 body">
         <!-- sidebar -->
         <div class="p-3 col fixed text-white bg-dark">
-            <a href="#" class="text-white text-decoration-none">
+            <a href="{{route('admin.home.index')}}" class="text-white text-decoration-none">
                 <span class="fs-4">Admin Panel</span>
             </a>
             <hr />
@@ -33,6 +33,12 @@
                         page</a>
                 </li>
             </ul>
+
+            <form id="logout" action="{{ route('logout') }}" method="POST">
+                <a role="button" class="nav-link active"
+                    onclick="document.getElementById('logout').submit();">Logout</a>
+                @csrf
+            </form>
         </div>
         <!-- sidebar -->
         <div class="col content-grey">
@@ -41,7 +47,7 @@
                     <span class="profile-font">@yield('subtitle', 'Admin Home Page')</span>
                 </h2>
 
-                <img class="img-profile rounded-circle" src="{{ asset('/img/undraw_profile.svg') }}">
+                <img class="img-profile rounded-circle" src="{{ asset('/img/ham.png') }}">
             </nav>
             <div class="g-0 m-5">
                 @yield('content')

@@ -25,9 +25,14 @@ hr {
     color: #858796 !important;
     font-size: 80%;
     font-weight: 400;
+    float: left;
 }
 
 .card-header {
     background-color: #f8f9fc;
     border-bottom: 1px solid #e3e6f0;
+}
+
+.body {
+    min-height: 35em;
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Goal;
 use Illuminate\Http\Request;
 
 class AdminGoalController extends Controller
@@ -16,7 +17,7 @@ class AdminGoalController extends Controller
     {
         $viewData = [];
         $viewData["title"] = "Admin List Goal Page- Online Store";
-        $viewData["products"] = Product::all();
+        $viewData["goals"] = Goal::all();
         return view('admin.goal.index')->with("viewData", $viewData);
     }
 

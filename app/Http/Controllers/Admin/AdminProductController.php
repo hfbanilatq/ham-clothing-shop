@@ -7,6 +7,7 @@ use App\Interfaces\ImageStorage;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class AdminProductController extends Controller
 {
@@ -46,7 +47,9 @@ class AdminProductController extends Controller
     public function store(Request $request)
     {
         Product::validate($request);
-        $categoryInDatabase = Category::findOrFail($request->input('category'));
+
+        $categoryInDatabase = Category::findOrFail($request->input('category_id'));
+
         $newProduct = new Product();
         $newProduct->setName($request->input('name'));
         $newProduct->setDescription($request->input('description'));
@@ -59,7 +62,7 @@ class AdminProductController extends Controller
 
         $storeInterface = app(ImageStorage::class);
         $savedImageName = $storeInterface->store($request);
-        if($savedImageName !== null) {
+        if ($savedImageName !== null) {
             $newProduct->setImage($savedImageName);
         }
 
@@ -98,7 +101,7 @@ class AdminProductController extends Controller
 
         $storeInterface = app(ImageStorage::class);
         $savedImageName = $storeInterface->store($request);
-        if($savedImageName !== null) {
+        if ($savedImageName !== null) {
             $editProduct->setImage($savedImageName);
         }
 
