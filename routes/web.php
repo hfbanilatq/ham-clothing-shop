@@ -46,6 +46,12 @@ Route::middleware('admin')->group(function () {
     Route::delete('/admin/categories/{id}/delete', 'App\Http\Controllers\Admin\AdminCategoryController@delete')->name("admin.category.delete");
     Route::get('/admin/categories/{id}/edit', 'App\Http\Controllers\Admin\AdminCategoryController@edit')->name("admin.category.edit");
     Route::put('/admin/categories/{id}/update', 'App\Http\Controllers\Admin\AdminCategoryController@update')->name("admin.category.update");
+    Route::get('/admin/goals', 'App\Http\Controllers\Admin\AdminGoalController@index')->name("admin.goal.index");
+    Route::get('/admin/goals/create', 'App\Http\Controllers\Admin\AdminGoalController@create')->name("admin.goal.create");
+    Route::post('/admin/goals/store', 'App\Http\Controllers\Admin\AdminGoalController@store')->name("admin.goal.store");
+    Route::delete('/admin/goals/{id}/delete', 'App\Http\Controllers\Admin\AdminGoalController@delete')->name("admin.goal.delete");
+    Route::get('/admin/goals/{id}/edit', 'App\Http\Controllers\Admin\AdminGoalController@edit')->name("admin.goal.edit");
+    Route::put('/admin/goals/{id}/update', 'App\Http\Controllers\Admin\AdminGoalController@update')->name("admin.goal.update");
 });
 
 Auth::routes();

@@ -59,7 +59,7 @@
                         <div class="mb-3 row">
                             <label class="col-lg-6 col-md-8 col-sm-12 col-form-label">Category:</label>
                             <div class="col-lg-6 col-md-8 col-sm-12">
-                                <select name="category">
+                                <select name="category_id">
                                     @foreach ($viewData['categories'] as $category)
                                         <option value="{{ $category->getId() }}">{{ $category->getDescription() }}
                                         </option>
@@ -75,6 +75,16 @@
                             <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Price:</label>
                             <div class="col-lg-10 col-md-6 col-sm-12">
                                 <input name="price" value="{{ old('price') }}" type="number" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="mb-3 row">
+                            <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Quantitiy In Stock:</label>
+                            <div class="col-lg-10 col-md-6 col-sm-12">
+                                <input name="quantity_in_stock" value="{{ old('quantity_in_stock') }}" type="number" class="form-control">
                             </div>
                         </div>
                     </div>

@@ -1,18 +1,7 @@
-.bg-secondary {
-    background-color: black !important;
-}
-
 .copyright {
     background-color: #1a252f;
 }
 
-.gb-third {
-    background-color: white !important;
-}
-
-.bg-primary {
-    background-color: gray !important;
-}
 
 nav {
     font-weight: 700;
@@ -37,3 +26,232 @@ nav {
     color: red;
 }
 
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.bg-primary {
+
+    background-color: gray !important;
+
+}
+
+.bg-secondary {
+
+    background-color: black !important;
+
+}
+
+.bg-third {
+
+    background-color: whitesmoke !important;
+
+}
+
+.principal-font {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.copyright {
+
+    background-color: #1a252f;
+
+}
+
+
+h2 {
+    color: whitesmoke;
+}
+
+nav {
+
+    font-weight: 700;
+
+}
+
+.img-card {
+
+    height: 5vw;
+
+    object-fit: cover;
+
+}
+
+/********************************************************************************/
+/**************************-----LAYOUTS------************************************/
+/********************************************************************************/
+
+/**************************-----BARRA DE NAVEGACIÓN------************************/
+
+.barnav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    border-radius: 20px;
+}
+
+.barnav li {
+    float: left;
+}
+
+.barnav li a {
+    display: block;
+    color: whitesmoke;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.barnav li a:hover:not(.active) {
+    background-color: #111;
+}
+
+/**********************************************************/
+
+
+nav {
+    font-weight: 700;
+}
+
+.img-card {
+    height: 18vw;
+    object-fit: cover;
+}
+
+figure figcaption {
+    font-size: large;
+    font-weight: bolder;
+    color: #2c3e50;
+}
+
+figure figcaption:hover {
+    font-size: larger;
+    color: black;
+}
+
+figure {
+    background-color: whitesmoke;
+    padding: 15px;
+}
+
+
+#categorias nav {
+    background-color: #2c3e50;
+}
+
+#productos h3 {
+    color: black;
+    text-transform: capitalize;
+}
+
+#categorias nav ul li {
+    background-color: whitesmoke;
+}
+
+#categorias ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #665555;
+    border-radius: 20px;
+}
+
+#categorias li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+#categorias li a:hover {
+    background-color: #555;
+    color: white;
+}
+
+/* ------------------------ BUSCADOR Y FILTROS     ------------------    */
+
+
+
+input select {
+    width: 20px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+
+/* -------------------- BOTONES Y COLORES --------------------------- */
+
+.button {
+    background-color: whitesmoke;
+    border: none;
+    border-radius: 20px;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: gray;
+    color: whitesmoke;
+}
+
+.rounded {
+    border-radius: 20px;
+}
+
+.border {
+    border-style: solid;
+    border-width: 5px;
+    border-color: black;
+}
+
+.button-p {
+    background-color: black;
+    border: none;
+    border-radius: 20px;
+    color: whitesmoke;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button-p:hover {
+    background-color: whitesmoke;
+    color: black;
+    font-weight: bold;
+    border-color: #000;
+}
+
+.product-title {
+    color: black;
+    text-transform: capitalize;
+    font-size: xx-large;
+    font-weight: bolder;
+}
+
+product-price {
+    color: black;
+    text-transform: capitalize;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+/********************************************************************************/
+/**************************-----PRODUCT------************************************/
+/********************************************************************************/
