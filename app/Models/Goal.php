@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Request;
 
 class Goal extends Model
 {
@@ -20,43 +21,71 @@ class Goal extends Model
      * $this->getUsers() - User[] - the users completed this goal
      */
 
-     protected $fillable = [
-         'description',
-         'cant_publications',
-         'activable_discount'
-     ];
+    protected $fillable = [
+        'description',
+        'cant_publications',
+        'activable_discount'
+    ];
+
+    public static function validate(Request $request)
+    {
+        $validations = [
+            'description' => 'required|string|max:255',
+            'cant_publications' => 'required|numeric|gt:0',
+            'activable_discount' => 'required|numeric|gt:0|lt:1'
+        ];
+
+        $request->validate($validations);
+    }
 
 
-     public function setDescription($description) {
-         $this->attributes['description'] = $description;
-     }
+    public function getId()
+    {
+        return $this->attributes['id'];
+    }
 
-     public function getDescription() {
-         return $this->attributes['description'];
-     }
+    public function setId($id)
+    {
+        $this->attributes['id'] = $id;
+    }
 
-     public function setCantPublications($cantPublications) {
+    public function setDescription($description)
+    {
+        $this->attributes['description'] = $description;
+    }
+
+    public function getDescription()
+    {
+        return $this->attributes['description'];
+    }
+
+    public function setCantPublications($cantPublications)
+    {
         $this->attributes['cant_publications'] = $cantPublications;
     }
 
-    public function getCantPublications() {
+    public function getCantPublications()
+    {
         return $this->attributes['cant_publications'];
     }
 
-    public function setActivableDiscount($activableDiscount) {
+    public function setActivableDiscount($activableDiscount)
+    {
         $this->attributes['activable_discount'] = $activableDiscount;
     }
 
-    public function getActivableDiscount() {
+    public function getActivableDiscount()
+    {
         return $this->attributes['activable_discount'];
     }
 
-    public function users() 
+    public function users()
     {
         $this->hasMany(User::class);
     }
 
-    public function getUsers() {
+    public function getUsers()
+    {
         return $this->users;
     }
 }

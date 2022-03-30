@@ -26,7 +26,7 @@
                 </li>
                 <li><a href="{{ route('admin.category.index') }}" class="nav-link text-white">- Categories</a>
                 </li>
-                <li><a href="{{ route('admin.category.index') }}" class="nav-link text-white">- Goals</a>
+                <li><a href="{{ route('admin.goal.index') }}" class="nav-link text-white">- Goals</a>
                 </li>
                 <li>
                     <a href="{{ route('home.index') }}" class="mt-2 btn bg-primary text-white">Go back to the home
@@ -35,7 +35,7 @@
             </ul>
 
             <form id="logout" action="{{ route('logout') }}" method="POST">
-                <a role="button" class="nav-link active"
+                <a role="button" class="mt-2 btn bg-primary text-white"
                     onclick="document.getElementById('logout').submit();">Logout</a>
                 @csrf
             </form>

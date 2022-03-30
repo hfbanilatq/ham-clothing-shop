@@ -17,7 +17,18 @@ class AdminCategoryController extends Controller
     {
         $viewData = [];
         $viewData["title"] = "Admin Category List Page - Online Store";
+        $viewData['search'] = '';
         $viewData["categories"] = Category::all();
+        return view('admin.category.index')->with("viewData", $viewData);
+    }
+
+    public function search(Request $request)
+    {
+        $search = $request->input('search');
+        $viewData = [];
+        $viewData['title'] = "Admin Page - Products - Online Store";
+        $viewData['categories'] = Category::where('description', 'LIKE', '%'.$search.'%')->get();
+        $viewData['search'] = $search;
         return view('admin.category.index')->with("viewData", $viewData);
     }
 

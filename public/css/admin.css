@@ -36,3 +36,12 @@ hr {
 .body {
     min-height: 35em;
 }
+
+.form-button-container {
+    margin: 5px;
+}
+
+.btn-search {
+    float: left;
+    margin-left: 15px;
+}

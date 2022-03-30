@@ -40,6 +40,9 @@
                 <nav class="barnav d-flex justify-content-center p-3">
                     <ul class="bg-primary">
                         <li><a href="{{ route('myaccount.orders') }}"> My Orders</a></li>
+                        @admin
+                        <li><a href="{{ route('admin.home.index') }}"> Admin Panel</a></li>
+                        @endadmin
                         <li>
                             <form id="logout" action="{{ route('logout') }}" method="POST">
                                 <a role="button" class="nav-link active"
@@ -47,6 +50,7 @@
                                 @csrf
                             </form>
                         </li>
+                        
                     </ul>
                 </nav>
             @endguest

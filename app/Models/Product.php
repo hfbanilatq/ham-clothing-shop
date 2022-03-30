@@ -118,7 +118,7 @@ class Product extends Model
 
     public function getDescription()
     {
-        return $this->description;
+        return $this->attributes['description'] ;
     }
 
     public function setDescription($description)
@@ -127,7 +127,7 @@ class Product extends Model
     }
 
     public function category() {
-        $this->belongsTo(Category::class);
+        return $this->belongsTo(Category::class, 'category_id');
     }
 
     public function setCategory($category) {

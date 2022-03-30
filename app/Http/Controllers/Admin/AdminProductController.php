@@ -21,7 +21,21 @@ class AdminProductController extends Controller
     {
         $viewData = [];
         $viewData['title'] = "Admin Page - Products - Online Store";
+        $viewData['search'] = '';
         $viewData['products'] = Product::all();
+        return view('admin.product.index')->with("viewData", $viewData);
+    }
+
+    public function search(Request $request)
+    {
+        $search = $request->input('search');
+        $viewData = [];
+        $viewData['title'] = "Admin Page - Products - Online Store";
+        $viewData['products'] = Product::where('name', 'LIKE', '%' . $search . '%')
+            ->orWhere('description', 'LIKE', '%' . $search . '%')
+            ->orWhere('color', 'LIKE', '%' . $search . '%')
+            ->orWhere('size', 'LIKE', '%' . $search . '%')->get();
+        $viewData['search'] = $search;
         return view('admin.product.index')->with("viewData", $viewData);
     }
 
@@ -56,8 +70,8 @@ class AdminProductController extends Controller
         $newProduct->setPrice($request->input('price'));
         $newProduct->setColor($request->input('color'));
         $newProduct->setSize($request->input('size'));
-        $newProduct->setQuantityInStock($request->input('quiantity_in_stock'));
-        $newProduct->setCategory($categoryInDatabase);
+        $newProduct->setQuantityInStock($request->input('quantity_in_stock'));
+        $newProduct->getCategory()->associate($request->input('category_id'));
         $newProduct->setImage('test.jpg');
 
         $storeInterface = app(ImageStorage::class);
@@ -73,6 +87,8 @@ class AdminProductController extends Controller
     public function edit($id)
     {
         $viewData = [];
+        
+        $viewData['categories'] = Category::all();
         $viewData['title'] = "Admin Page - Edit Product - Online Store";
         $viewData['product'] = Product::findOrFail($id);
         return view('admin.product.edit')->with('viewData', $viewData);
@@ -88,17 +104,16 @@ class AdminProductController extends Controller
     public function update(Request $request, $id)
     {
         Product::validate($request);
-
-        Product::validate($request);
         $editProduct = Product::findOrFail($id);
         $editProduct->setName($request->input('name'));
         $editProduct->setDescription($request->input('description'));
         $editProduct->setPrice($request->input('price'));
         $editProduct->setColor($request->input('color'));
         $editProduct->setSize($request->input('size'));
-        $editProduct->setQuantityInStock($request->input('quiantity_in_stock'));
+        $editProduct->setQuantityInStock($request->input('quantity_in_stock'));
         $editProduct->setImage('test.jpg');
-
+       
+        $editProduct->category()->associate($request->input('category_id'));
         $storeInterface = app(ImageStorage::class);
         $savedImageName = $storeInterface->store($request);
         if ($savedImageName !== null) {

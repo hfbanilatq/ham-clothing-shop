@@ -14,13 +14,10 @@ class ImageLocalStorage implements ImageStorage
     {
         $imageUniqueName = null;
         if ($request->hasFile('image')) {
-            $imageUniqueName = ''.Carbon::now()->timestamp.$request->file('image')->extension();
+            $imageUniqueName = '' . Carbon::now()->timestamp . '.' . $request->file('image')->extension();
             Storage::disk('public')->put(
-
                 $imageUniqueName,
-
                 file_get_contents($request->file('image')->getRealPath())
-
             );
         }
 
