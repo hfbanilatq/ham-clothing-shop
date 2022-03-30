@@ -7,38 +7,36 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
+        $viewData = [];
+        $viewData["title"] = "Products - Online Store";
+        $viewData["subtitle"] = "List of products";
+        $viewData["products"] = Product::all();
+        return view('product.index')->with("viewData", $viewData);
     }
 
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Product  $product
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Product $product)
-    {
-        //
+    public function show($id){ 
+        $viewData = [];
+        $product = Product::findOrFail($id);
+        $viewData["title"] = $product["name"]." - Online Store";
+        $viewData["subtitle"] = $product["name"]." - Product information";
+        $viewData["product"] = $product;
+        return view('product.show')->with("viewData", $viewData);    
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Product  $product
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Product $product)
+    public function create()
     {
-        //
+        $viewData = []; 
+        $viewData["title"] = "Create product";
+        return view('product.create')->with("viewData",$viewData);
+    }
+
+    public function save(Request $request)
+    {
+        Product::validate($request);
+        Product::create($request->only(["name","price"]));
+        return back();
     }
 
 }
