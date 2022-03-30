@@ -31,8 +31,12 @@
                 <div class="text-end">
                     <a class="btn btn-outline-secondary mb-2"><b>Total to pay:</b> ${{ $viewData['total'] }}</a>
                     @if (count($viewData['products']) > 0)
-                        <button href="{{ route('cart.purchase') }}" class="btn bg-primary text-white mb-2"
+
+                    <form action="{{ route('cart.purchase') }}" method="GET">
+                            <button type="submit" class="btn bg-primary text-white mb-2"
                             {{ $viewData['disabled'] ? 'disabled' : '' }}>Purchase {{ $viewData['disabled'] }}</button>
+                    </form>
+                        
 
                         <a href="{{ route('cart.delete') }}">
                             <button class="btn btn-danger mb-2">
