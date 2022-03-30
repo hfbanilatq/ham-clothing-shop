@@ -19,12 +19,12 @@
         </div>
         <div class="col-sm-8 bg-third text-center p-3">
             <h1>HAM</h1>
-            <p>Para que puedas dar el mayor potencial, al mejor estilo</p>
+            <p>So that you can give the greatest potential, in the best style</p>
             <nav class="barnav d-flex justify-content-around">
                 <ul class="bg-primary">
-                    <li><a href="{{ route('home.index') }}">Inicio</a></li>
-                    <li><a href="#news">Ofertas</a></li>
-                    <li><a href="#contact">Contacto</a></li>
+                    <li><a href="{{ route('home.index') }}">HOME</a></li>
+                    <li><a href="#news">OFERTS</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
                 </ul>
             </nav>
         </div>
