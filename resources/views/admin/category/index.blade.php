@@ -8,42 +8,47 @@
         <thead class="thead-dark">
             <tr class="text-center row">
                 <th scope="col" class="col">Id</th>
-                <th scope="col" class="col">Name</th>
-                <th scope="col" class="col">Category</th>
-                <th scope="col" class="col">Price</th>
-                <th scope="col" class="col">Stock</th>
+                <th scope="col" class="col">Description</th>
+                <th scope="col" class="col">Actions</th>
             </tr>
         </thead>
         <tbody>
 
 
-            @foreach ($viewData['products'] as $product)
+            @foreach ($viewData['categories'] as $category)
                 <tr class="text-center row">
-                    <th class="col d-flex align-items-center justify-content-center">{{ $product->getId() }}</th>
-                    <td class="col d-flex align-items-center justify-content-center">{{ $product->getName() }}</td>
-                    <td class="col d-flex align-items-center justify-content-center">
-                        {{ $product->getCategory()->getDescription() }}</td>
-                    <td class="col d-flex align-items-center justify-content-center">{{ $product->getPrice() }}</td>
-                    @if ($product->getQuantityInStock() === 0)
-                        <td class="col red-text d-flex align-items-center justify-content-center">
-                            {{ $product->getQuantityInStock() }}</td>
-                    @else
-                        <td class="col d-flex align-items-center justify-content-center">
-                            {{ $product->getQuantityInStock() }} </td>
-                    @endif
+                    <th class="col d-flex align-items-center justify-content-center">{{ $category->getId() }}</th>
+                    <td class="col d-flex align-items-center justify-content-center">{{ $category->getDescription() }}</td>
 
-                    <th>
-                        <form action={{ route('admin.product.edit', ['id' => $product->getId()]) }} id="{{ $product->getId().'form-edit' }}" method="GET">
+
+                    <td>
+                        <form action={{ route('admin.category.edit', ['id' => $category->getId()]) }}
+                            id="{{ $category->getId() . 'form-edit' }}" method="GET">
                             @csrf
-                            <button type="submit" form="{{ 'form-create' }}" class="btn-list btn btn-info">
+                            <button type="submit" form="{{ $category->getId() . 'form-edit' }}"
+                                class="btn-list btn btn-info">
                                 Edit
                             </button>
                         </form>
-                    </th>
+                        <form action="{{ route('admin.category.delete', $category->getId()) }}" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <button class="btn btn-danger">
+                                <i class="bi-trash"></i>
+                            </button>
+                        </form>
+                    </td>
 
                 </tr>
             @endforeach
         </tbody>
     </table>
+
+    <form action={{ route('admin.category.create') }} id="{{ 'form-create' }}" method="GET">
+        @csrf
+        <button type="submit" form="{{ 'form-create' }}" class="btn-list btn btn-info">
+            Create new Category
+        </button>
+    </form>
 
 @endsection

@@ -18,7 +18,7 @@ class AdminCategoryController extends Controller
         $viewData = [];
         $viewData["title"] = "Admin Category List Page - Online Store";
         $viewData["categories"] = Category::all();
-        return view('admin.product.index')->with("viewData", $viewData);
+        return view('admin.category.index')->with("viewData", $viewData);
     }
 
 
