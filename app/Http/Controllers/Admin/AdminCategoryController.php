@@ -90,4 +90,9 @@ class AdminCategoryController extends Controller
 
         return redirect()->route('admin.category.index');
     }
+    public function destroy($id)
+    {
+        Category::destroy($id);
+        return back();
+    }
 }
