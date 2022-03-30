@@ -2,11 +2,11 @@
 @section('content')
     <div id="productos" class="col-md-12 bg-primary mt-3 ps-3 pe-3 text-center">
         <h2 class="pt-3">Products</h2>
-        <div class="row">
-            <div class="col-md-9">
+        <div class="row d-flex justify-content-around">
+            <div class="col-md-8">
                 <form action="{{ route('admin.goal.search') }}" method="GET">
                     <div class="row">
-                        <div class="col-md-9">
+                        <div class="col-md-6 mt-3">
                             <input type="text" class="form-control" name="search">
                         </div>
                         <button type="submit" class="btn-list btn btn-info btn-search col-md-2">
