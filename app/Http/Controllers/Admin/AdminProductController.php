@@ -71,7 +71,7 @@ class AdminProductController extends Controller
         $newProduct->setColor($request->input('color'));
         $newProduct->setSize($request->input('size'));
         $newProduct->setQuantityInStock($request->input('quantity_in_stock'));
-        $newProduct->getCategory()->associate($request->input('category_id'));
+        $newProduct->category()->associate($request->input('category_id'));
         $newProduct->setImage('test.jpg');
 
         $storeInterface = app(ImageStorage::class);
