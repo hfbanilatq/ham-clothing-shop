@@ -57,4 +57,9 @@ class AdminGoalController extends Controller
 
         return back();
     }
+    public function destroy($id)
+    {
+        Goal::destroy($id);
+        return back();
+    }
 }
