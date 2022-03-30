@@ -9,13 +9,7 @@
                     <div class="row">
                         <div class="col-md-6 mt-3">
                             <input type="text" class="form-control" name="search">
-                        </div>
-                        <select name="category_id" class="btn-list  col-md-2 border">
-                            @foreach ($viewData['categories'] as $category)
-                                <option value="{{$category->getId()}}">{{$category->getDescription()}}</a></option>
-                            @endforeach
-    
-                        </select>
+                        </div>                       
                         <button type="submit" class="btn-list btn btn-info btn-search col-md-2">
                             <i class="bi-search"></i>
                             Search

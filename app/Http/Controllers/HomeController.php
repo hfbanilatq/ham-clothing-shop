@@ -18,8 +18,7 @@ class HomeController extends Controller
     public function search(Request $request)
     {
         $searchInput = $request->input('search');
-        $searchSelect = $request->input('category_id');
-        
+               
         $viewData = [];
         $viewData['title'] = "Products - Online Store";
         $viewData["categories"] = Category::all();
@@ -28,7 +27,7 @@ class HomeController extends Controller
             ->orWhere('description', 'LIKE', '%' . $searchInput . '%')
             ->orWhere('color', 'LIKE', '%' . $searchInput . '%')
             ->orWhere('size', 'LIKE', '%' . $searchInput . '%')
-            ->where('category_id', '=', $searchSelect)->get()   
+            ->get()   
             ;
         $viewData['search'] = $searchInput;
         return view('home.index')->with("viewData", $viewData);
