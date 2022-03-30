@@ -24,10 +24,12 @@
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="row">
                     <div class="col">
                         <div class="mb-3 row">
-                            <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Color:</label>
-                            <div class="col-lg-10 col-md-6 col-sm-12">
+                            <label class="col-lg-6 col-md-8 col-sm-12 col-form-label">Color:</label>
+                            <div class="col-lg-6 col-md-8 col-sm-12">
                                 <select name="color">
                                     <option value="White"> White </option>
                                     <option value="Black"> Black </option>
@@ -41,8 +43,8 @@
                     </div>
                     <div class="col">
                         <div class="mb-3 row">
-                            <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Size:</label>
-                            <div class="col-lg-10 col-md-6 col-sm-12">
+                            <label class="col-lg-6 col-md-8 col-sm-12 col-form-label">Size:</label>
+                            <div class="col-lg-6 col-md-8 col-sm-10">
                                 <select name="size">
                                     <option value="S"> S </option>
                                     <option value="M"> M </option>
@@ -53,11 +55,10 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="col">
                         <div class="mb-3 row">
-                            <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Size:</label>
-                            <div class="col-lg-10 col-md-6 col-sm-12">
+                            <label class="col-lg-6 col-md-8 col-sm-12 col-form-label">Category:</label>
+                            <div class="col-lg-6 col-md-8 col-sm-12">
                                 <select name="category">
                                     @foreach ($viewData['categories'] as $category)
                                         <option value="{{ $category->getId() }}">{{ $category->getDescription() }}
@@ -67,6 +68,8 @@
                             </div>
                         </div>
                     </div>
+                </div>
+                <div class="row">
                     <div class="col">
                         <div class="mb-3 row">
                             <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Price:</label>
@@ -79,8 +82,8 @@
                 <div class="row">
                     <div class="col">
                         <div class="mb-3 row">
-                            <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Image:</label>
-                            <div class="col-lg-10 col-md-6 col-sm-12">
+                            <label class="col-lg-4 col-md-8 col-sm-12 col-form-label">Image:</label>
+                            <div class="col-lg-8 col-md-12 ">
                                 <input class="form-control" type="file" name="image">
                             </div>
                         </div>
@@ -95,48 +98,6 @@
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="card-header">
-            Manage Products
-        </div>
-        <div class="card-body">
-            <table class="table table-bordered table-striped">
-                <thead>
-                    <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Edit</th>
-                        <th scope="col">Delete</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($viewData['products'] as $product)
-                        <tr>
-                            <td>{{ $product->getId() }}</td>
-                            <td>{{ $product->getName() }}</td>
-                            <td>
-                                <a class="btn btn-primary"
-                                    href="{{ route('admin.product.edit', ['id' => $product->getId()]) }}">
-                                    <i class="bi-pencil"></i>
-                                </a>
-
-                            </td>
-                            <td>
-                                <form action="{{ route('admin.product.delete', $product->getId()) }}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button class="btn btn-danger">
-                                        <i class="bi-trash"></i>
-                                    </button>
-                                </form>
-                            </td>
-                        </tr>
-                    @endforeach
-                </tbody>
-            </table>
         </div>
     </div>
 @endsection

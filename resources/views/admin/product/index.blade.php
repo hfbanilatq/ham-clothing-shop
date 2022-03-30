@@ -40,11 +40,26 @@
                                 Edit
                             </button>
                         </form>
+
+                        <form action="{{ route('admin.product.delete', $product->getId()) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button class="btn btn-danger">
+                                <i class="bi-trash"></i>
+                            </button>
+                        </form>
                     </td>
 
                 </tr>
             @endforeach
         </tbody>
     </table>
+
+    <form action={{ route('admin.product.create') }} id="{{ 'form-create' }}" method="GET">
+        @csrf
+        <button type="submit" form="{{ 'form-create' }}" class="btn-list btn btn-info">
+            Create new Product
+        </button>
+    </form>
 
 @endsection
