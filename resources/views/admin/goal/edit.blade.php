@@ -15,6 +15,7 @@
             @endif
             <form method="POST" action="{{ route('admin.goal.update', ['id' => $viewData['goal']->getId()]) }}" enctype="multipart/form-data">
                 @csrf
+                @method('PUT')
                 <div class="col">
                     <div class="mb-3 row">
                         <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Description</label>
