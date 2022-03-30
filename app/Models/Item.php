@@ -62,6 +62,16 @@ class Item extends Model
         $this->attributes['price'] = $price;
     }
 
+    public function getTotalPrice()
+    {
+        return $this->attributes['total_price'];
+    }
+
+    public function setTotalPrice($price)
+    {
+        $this->attributes['total_price'] = $price;
+    }
+
     public function getOrderId()
     {
         return $this->attributes['order_id'];

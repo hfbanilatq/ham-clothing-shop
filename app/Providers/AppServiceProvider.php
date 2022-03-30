@@ -30,5 +30,12 @@ class AppServiceProvider extends ServiceProvider
             }
             return 0;
         });
+
+        Blade::if('hasbalance', function ($total) {
+            if (auth()->user() && (auth()->user()->getBalance()-$total) >= 0) {
+                return 1;
+            }
+            return 0;
+        });
     }
 }

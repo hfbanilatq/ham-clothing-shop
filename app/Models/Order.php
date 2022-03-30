@@ -40,12 +40,12 @@ class Order extends Model
 
     public function getTotal()
     {
-        return $this->attributes['total'];
+        return $this->attributes['total_price'];
     }
 
     public function setTotal($total)
     {
-        $this->attributes['total'] = $total;
+        $this->attributes['total_price'] = $total;
     }
 
     public function getUserId()

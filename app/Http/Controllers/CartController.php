@@ -1,6 +1,7 @@
 <?php
 //Jose Alejandro Sanchez
 namespace App\Http\Controllers;
+
 use App\Models\Product;
 use App\Models\Order;
 use App\Models\Item;
@@ -22,7 +23,8 @@ class CartController extends Controller
         $viewData["title"] = "Cart - Online Store";
         $viewData["subtitle"] = "Shopping Cart";
         $viewData["total"] = $total;
-        $viewData["products"] = $productsInCart;        
+        $viewData["disabled"] =  Auth::user()->getBalance() - $total < 0;
+        $viewData["products"] = $productsInCart;
         return view('cart.index')->with("viewData", $viewData);
     }
 
@@ -58,8 +60,9 @@ class CartController extends Controller
                 $item->setPrice($product->getPrice());
                 $item->setProductId($product->getId());
                 $item->setOrderId($order->getId());
+                $item->setTotalPrice($product->getPrice() * $quantity);
                 $item->save();
-                $total = $total + ($product->getPrice()*$quantity);
+                $total = $total + ($product->getPrice() * $quantity);
             }
             $order->setTotal($total);
             $order->save();
@@ -73,8 +76,7 @@ class CartController extends Controller
             $viewData["order"] = $order;
             return view('cart.purchase')->with("viewData", $viewData);
         } else {
-        return redirect()->route('cart.index');
+            return redirect()->route('cart.index');
+        }
     }
-    }
-
 }
