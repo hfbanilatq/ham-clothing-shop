@@ -30,7 +30,7 @@ class AdminProductController extends Controller
     {
         $search = $request->input('search');
         $viewData = [];
-        $viewData['title'] = "Admin Page - Products - Online Store";
+        $viewData['title'] = __('adminpage.title.product');
         $viewData['products'] = Product::where('name', 'LIKE', '%' . $search . '%')
             ->orWhere('description', 'LIKE', '%' . $search . '%')
             ->orWhere('color', 'LIKE', '%' . $search . '%')
@@ -81,7 +81,7 @@ class AdminProductController extends Controller
         }
 
         $newProduct->save();
-        return back()->with('success', 'Product created');
+        return back()->with(__('adminpage.success'), __('adminpage.product.created'));
     }
 
     public function edit($id)
@@ -89,7 +89,7 @@ class AdminProductController extends Controller
         $viewData = [];
         
         $viewData['categories'] = Category::all();
-        $viewData['title'] = "Admin Page - Edit Product - Online Store";
+        $viewData['title'] = __('adminpage.title.edit');
         $viewData['product'] = Product::findOrFail($id);
         return view('admin.product.edit')->with('viewData', $viewData);
     }

@@ -68,7 +68,7 @@ class AdminCategoryController extends Controller
     {
         $categoryToEdit = Category::findOrFail($id);
         $viewData = [];
-        $viewData["title"] = "Admin Create Category Page - Ham Store";
+        $viewData["title"] = __('adminpage.title.create.category');
         $viewData["category"] = $categoryToEdit;
         return view('admin.category.edit')->with("viewData", $viewData);
     }

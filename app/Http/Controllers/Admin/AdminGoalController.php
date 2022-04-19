@@ -16,7 +16,7 @@ class AdminGoalController extends Controller
     public function index()
     {
         $viewData = [];
-        $viewData["title"] = "Admin List Goal Page- Online Store";
+        $viewData["title"] = __('adminpage.title.list.goal');
         $viewData['search'] = '';
         $viewData["goals"] = Goal::all();
         return view('admin.goal.index')->with("viewData", $viewData);
@@ -30,7 +30,7 @@ class AdminGoalController extends Controller
     public function create()
     {
         $viewData = [];
-        $viewData["title"] = "Admin Create Goal Page - Ham Store";
+        $viewData["title"] = __('adminpage.title.create.goal');
         return view('admin.goal.create')->with("viewData", $viewData);
     }
 
@@ -38,7 +38,7 @@ class AdminGoalController extends Controller
     {
         $search = $request->input('search');
         $viewData = [];
-        $viewData['title'] = "Admin Page - Goals - Online Store";
+        $viewData['title'] = __('adminpage.title.goal');
         $viewData['goals'] = Goal::where('description', 'LIKE', '%' . $search . '%')
             ->get();
         $viewData['search'] = $search;
