@@ -20,7 +20,7 @@ class AdminProductController extends Controller
     public function index()
     {
         $viewData = [];
-        $viewData['title'] = "Admin Page - Products - Online Store";
+        $viewData['title'] = __('adminpage.title.product');
         $viewData['search'] = '';
         $viewData['products'] = Product::all();
         return view('admin.product.index')->with("viewData", $viewData);
@@ -47,7 +47,7 @@ class AdminProductController extends Controller
     public function create()
     {
         $viewData = [];
-        $viewData['title'] = 'Admin Create Product Page - Ham Store';
+        $viewData['title'] = __('adminpage.title.create.product');
         $viewData['categories'] = Category::all();
         return view('admin.product.create')->with('viewData', $viewData);
     }

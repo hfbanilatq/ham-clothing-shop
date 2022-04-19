@@ -16,7 +16,7 @@ class AdminCategoryController extends Controller
     public function index()
     {
         $viewData = [];
-        $viewData["title"] = "Admin Category List Page - Online Store";
+        $viewData["title"] = __('adminpage.title.category');
         $viewData['search'] = '';
         $viewData["categories"] = Category::all();
         return view('admin.category.index')->with("viewData", $viewData);
@@ -26,7 +26,7 @@ class AdminCategoryController extends Controller
     {
         $search = $request->input('search');
         $viewData = [];
-        $viewData['title'] = "Admin Page - Products - Online Store";
+        $viewData['title'] = __('adminpage.title.product');
         $viewData['categories'] = Category::where('description', 'LIKE', '%'.$search.'%')->get();
         $viewData['search'] = $search;
         return view('admin.category.index')->with("viewData", $viewData);
@@ -41,7 +41,7 @@ class AdminCategoryController extends Controller
     public function create()
     {
         $viewData = [];
-        $viewData["title"] = "Admin Create Category Page - Ham Store";
+        $viewData["title"] = __('adminpage.title.category');
         return view('admin.category.create')->with("viewData", $viewData);
     }
 

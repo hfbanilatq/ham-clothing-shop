@@ -10,7 +10,7 @@ class ProductController extends Controller
     public function index()
     {
         $viewData = [];
-        $viewData["title"] = "Products - Online Store";
+        $viewData["title"] = __('pagination.title');
         $viewData["subtitle"] = "List of products";
         $viewData["products"] = Product::all();
         return view('product.index')->with("viewData", $viewData);

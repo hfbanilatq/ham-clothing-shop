@@ -12,8 +12,9 @@ return [
     | you want to customize your views to better match your application.
     |
     */
-
+    'title' => 'Products - Online Store',
     'previous' => '&laquo; Previous',
     'next' => 'Next &raquo;',
-
+    'shoping' => 'Shoping Store',
+    
 ];
