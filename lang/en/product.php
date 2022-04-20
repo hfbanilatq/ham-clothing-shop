@@ -1,6 +1,8 @@
 <?php 
 
 return [
+    
+    'title' => 'Products - Online Store',
     //ProductController-index
     'sub.product' => 'List of products',
 

@@ -3,7 +3,7 @@
 @section('content')
     <div class="card mb-4">
         <div class="card-header">
-            Edit Category
+            {{__('adminpage.edit.category')}}
         </div>
         <div class="card-body">
             @if ($errors->any())
@@ -18,13 +18,13 @@
                 @method('PUT')
                 <div class="col">
                     <div class="mb-3 row">
-                        <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Description</label>
+                        <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">{{__('home.desc')}}</label>
                         <div class="col-lg-10 col-md-6 col-sm-12">
                             <input name="description" value="{{  $viewData['category']->getDescription() }}" type="text" class="form-control">
                         </div>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">{{__('home.submit')}}</button>
             </form>
         </div>
     </div>

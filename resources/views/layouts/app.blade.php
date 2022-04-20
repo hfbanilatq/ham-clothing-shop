@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
         crossorigin="anonymous" />
     <link href="{{ asset('/css/app.css') }}" rel="stylesheet" />
-    <title>Shopping store</title>
+    <title>{{__('home.ss')}}</title>
 </head>
 
 <body>
@@ -19,12 +19,12 @@
         </div>
         <div class="col-sm-8 bg-third text-center p-3">
             <h1>HAM</h1>
-            <p>So that you can give the greatest potential, in the best style</p>
+            <p>{{__('home.slo')}}</p>
             <nav class="barnav d-flex justify-content-around">
                 <ul class="bg-primary">
-                    <li><a href="{{ route('home.index') }}">HOME</a></li>
-                    <li><a href="#news">OFERTS</a></li>
-                    <li><a href="#contact">CONTACT</a></li>
+                    <li><a href="{{ route('home.index') }}">{{__('home.home')}}</a></li>
+                    <li><a href="#news">{{__('home.offerts')}}</a></li>
+                    <li><a href="#contact">{{__('home.contact')}}</a></li>
                 </ul>
             </nav>
         </div>
@@ -32,22 +32,22 @@
             @guest
                 <nav class="barnav d-flex justify-content-center p-3">
                     <ul class="bg-primary">
-                        <li><a href="{{ route('login') }}"> Login</a></li>
+                        <li><a href="{{ route('login') }}"> {{__('home.login')}}</a></li>
                         <li><a href="{{ route('register') }}">Register</a></li>
                     </ul>
                 </nav>
             @else
                 <nav class="barnav d-flex justify-content-center p-3">
                     <ul class="bg-primary">
-                        <li><a href="{{ route('myaccount.orders') }}"> My Orders</a></li><br>
-                        <li><a href="{{ route('cart.index') }}"> Cart</a></li><br>
+                        <li><a href="{{ route('myaccount.orders') }}"> {{__('home.my.orders')}}</a></li><br>
+                        <li><a href="{{ route('cart.index') }}"> {{__('home.cart')}}</a></li><br>
                         @admin
-                        <li><a href="{{ route('admin.home.index') }}"> Admin Panel</a></li>
+                        <li><a href="{{ route('admin.home.index') }}"> {{__('home.admin.panel')}}</a></li>
                         @endadmin
                         <li>
                             <form id="logout" action="{{ route('logout') }}" method="POST">
                                 <a role="button" class="nav-link active"
-                                    onclick="document.getElementById('logout').submit();">Logout</a>
+                                    onclick="document.getElementById('logout').submit();">{{__('home.logout')}}</a>
                                 @csrf
                             </form>
                         </li>

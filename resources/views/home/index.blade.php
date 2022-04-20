@@ -2,7 +2,7 @@
 @section('content')
 <div id="productos" class="col-md-12 bg-primary mt-3 ps-3 pe-3 text-center">
     
-        <h2 class="pt-3">Products</h2>
+        <h2 class="pt-3">{{__('home.products')}}</h2>
         <div class="row d-flex justify-content-around">
             <div class="col-md-8">
                 <form action="{{ route('home.search') }}" method="GET">
@@ -12,7 +12,7 @@
                         </div>                       
                         <button type="submit" class="btn-list btn btn-info btn-search col-md-2">
                             <i class="bi-search"></i>
-                            Search
+                            {{__('home.search')}}
                         </button>
                     </div>
                 </form>  

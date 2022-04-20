@@ -9,7 +9,7 @@
         crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link href="{{ asset('/css/admin.css') }}" rel="stylesheet" />
-    <title>@yield('title', 'Admin - Online Store')</title>
+    <title>@yield('title','Admin - Online Store')</title>
 </head>
 
 <body>
@@ -17,26 +17,26 @@
         <!-- sidebar -->
         <div class="p-3 col fixed text-white bg-dark">
             <a href="{{route('admin.home.index')}}" class="text-white text-decoration-none">
-                <span class="fs-4">Admin Panel</span>
+                <span class="fs-4">{{__('home.admin.panel')}}</span>
             </a>
             <hr />
             <ul class="nav flex-column">
-                <li><a href="{{ route('admin.home.index') }}" class="nav-link text-white">- Admin - Home</a></li>
-                <li><a href="{{ route('admin.product.index') }}" class="nav-link text-white">- Products</a>
+                <li><a href="{{ route('admin.home.index') }}" class="nav-link text-white">- {{__('home.home')}}</a></li>
+                <li><a href="{{ route('admin.product.index') }}" class="nav-link text-white">- {{__('home.products')}}</a>
                 </li>
-                <li><a href="{{ route('admin.category.index') }}" class="nav-link text-white">- Categories</a>
+                <li><a href="{{ route('admin.category.index') }}" class="nav-link text-white">- {{__('home.categories')}}</a>
                 </li>
-                <li><a href="{{ route('admin.goal.index') }}" class="nav-link text-white">- Goals</a>
+                <li><a href="{{ route('admin.goal.index') }}" class="nav-link text-white">- {{__('home.goals')}}</a>
                 </li>
                 <li>
-                    <a href="{{ route('home.index') }}" class="mt-2 btn bg-primary text-white">Go back to the home
+                    <a href="{{ route('home.index') }}" class="mt-2 btn bg-primary text-white">{{__('adminpage.gb')}}
                         page</a>
                 </li>
             </ul>
 
             <form id="logout" action="{{ route('logout') }}" method="POST">
                 <a role="button" class="mt-2 btn bg-primary text-white"
-                    onclick="document.getElementById('logout').submit();">Logout</a>
+                    onclick="document.getElementById('logout').submit();">{{__('home.logout')}}</a>
                 @csrf
             </form>
         </div>
@@ -44,7 +44,7 @@
         <div class="col content-grey">
             <nav class="p-3 shadow text-end">
                 <h2>
-                    <span class="profile-font">@yield('subtitle', 'Admin Home Page')</span>
+                    <span class="profile-font">@yield('subtitle','Admin Home Page - Ham Store')</span>
                 </h2>
 
                 <img class="img-profile rounded-circle" src="{{ asset('/img/ham.png') }}">
