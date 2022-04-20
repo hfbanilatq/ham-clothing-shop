@@ -12,7 +12,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    {{ __('You are logged in!') }}
+                    {{ __('home.success.login') }}
                 </div>
             </div>
         </div>

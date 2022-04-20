@@ -6,7 +6,7 @@
 @forelse ($viewData["orders"] as $order)
 <div class="card mb-4">
     <div class="card-header">
-        Order #{{ $order->getId() }}
+        {{__('home.order')}} #{{ $order->getId() }}
     </div>
     <div class="card-body">
         <b>Date:</b> {{ $order->getCreatedAt() }}<br />
@@ -14,10 +14,10 @@
         <table class="table table-bordered table-striped text-center mt-3">
             <thead>
                 <tr>
-                    <th scope="col">Item ID</th>
-                    <th scope="col">Product Name</th>
-                    <th scope="col">Price</th>
-                    <th scope="col">Quantity</th>
+                    <th scope="col">ID</th>
+                    <th scope="col">{{__('home.name')}}</th>
+                    <th scope="col">{{__('home.price')}}</th>
+                    <th scope="col">{{__('home.quantity')}}</th>
                 </tr>
             </thead>
             <tbody>
@@ -40,7 +40,7 @@
 </div>
 @empty
 <div class="alert alert-danger" role="alert">
-    Seems to be that you have not purchased anything in our store =(.
+    {{__('orders.nothing')}}
 </div>
 @endforelse
 @endsection

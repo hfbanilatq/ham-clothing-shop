@@ -29,19 +29,14 @@
             </table>
             <div class="row">
                 <div class="text-end">
-                    <a class="btn btn-outline-secondary mb-2"><b>{{__('cart.total.pay')}}:</b> ${{ $viewData['total'] }}</a><br>
-                    <a href="{{route('product.index')}}" class="btn btn-primary">{{__('cart.back')}}<b></b></a>
+                    <h1 <b>{{__('cart.total.pay')}}:</b> ${{ $viewData['total'] }}</h1>
+                    <a href="{{route('product.index')}}" class="btn btn-primary">{{__('cart.back')}}</a>
                     @if (count($viewData['products']) > 0)
                     <form action="{{ route('cart.purchase') }}" method="GET">
                             <button type="submit" class="btn bg-primary text-white mb-2"
                             {{ $viewData['disabled'] ? 'disabled' : '' }}>{{__('cart.purchase')}} {{ $viewData['disabled'] }}</button>
                     </form>                       
-
-                        <a href="{{ route('cart.delete') }}">
-                            <button class="btn btn-danger mb-2">
-                                {{__('cart.remove')}}
-                            </button>
-                        </a>
+                        <a href="{{ route('cart.delete') }}" class="btn btn-danger mb-2">{{__('cart.remove')}}</a>
                     @endif
                     @if ($viewData['disabled'])
                     <div class="col red-text d-flex align-items-center justify-content-center">
