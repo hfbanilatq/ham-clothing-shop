@@ -3,7 +3,7 @@
 return [
     
     //AdminHomeController
-    'titlehome' => 'Admin Home Page - Ham Store',
+    'title.home' => 'Admin Home Page - Ham Store',
 
     //Category
     'title.category' => 'Admin Category List Page - Online Store',
@@ -16,6 +16,8 @@ return [
     'title.product' => 'Admin Page - Products - Online Store',
     'title.create.product' => 'Admin Create Product Page - Ham Store',
     'title.edit' => 'Admin Page - Edit Product - Online Store',
+    'create.products' => 'Create Products',
+    'create.new.product' => 'Create New Product',
     'success' => 'Success',
     'product.created' => 'Product Created',
 
@@ -28,10 +30,21 @@ return [
     'cant.publication' => 'Cant Publications',
     'act.disc' => 'Activable Discount',
 
-    //Adminview
+    //Adminviews
     'title' => 'Admin - Online Store',
     'gb' => 'Go back to the home',
-
-
+    'ap.home.page' => 'Admin Panel - Home Page',
+    'welcome' => 'Welcome to the Admin Panel, use the sidebar to navigate between the different options.',
+    'q.stock' => 'Quantitiy In Stock',
+    'stock' => 'Stock',
+    'name' => 'Name',
+    'size' => 'Size',
+    'color' => 'Color',
+        'color.white' => 'White',
+        'color.black' => 'Black',
+        'color.red' => 'Red',
+        'color.orange' => 'Orange',
+        'color.green' => 'Green',
+        'color.gray' => 'Gray',
 ];
 ?>

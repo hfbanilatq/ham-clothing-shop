@@ -29,8 +29,7 @@
                 <li><a href="{{ route('admin.goal.index') }}" class="nav-link text-white">- {{__('home.goals')}}</a>
                 </li>
                 <li>
-                    <a href="{{ route('home.index') }}" class="mt-2 btn bg-primary text-white">{{__('adminpage.gb')}}
-                        page</a>
+                    <a href="{{ route('home.index') }}" class="mt-2 btn bg-primary text-white">{{__('adminpage.gb')}}</a>
                 </li>
             </ul>
 

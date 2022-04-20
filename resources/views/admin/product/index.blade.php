@@ -12,7 +12,7 @@
                     </div>
                     <button type="submit" class="btn-list btn btn-info btn-search col-md-2">
                         <i class="bi-search"></i>
-                        Search
+                            {{__('home.search')}}
                     </button>
 
                 </div>
@@ -23,7 +23,7 @@
             <form action={{ route('admin.product.create') }} id="{{ 'form-create' }}" method="GET">
                 @csrf
                 <button type="submit" form="{{ 'form-create' }}" class="btn-list btn btn-info">
-                    Create new Product
+                {{__('adminpage.create.new.product')}}
                     <i class="bi-plus-circle"></i>
                 </button>
             </form>
@@ -33,11 +33,11 @@
         <thead class="thead-dark">
             <tr class="text-center row">
                 <th scope="col" class="col">Id</th>
-                <th scope="col" class="col">Name</th>
-                <th scope="col" class="col">Category</th>
-                <th scope="col" class="col">Price</th>
-                <th scope="col" class="col">Stock</th>
-                <th scope="col" class="col">Action</th>
+                <th scope="col" class="col">{{__('adminpage.name')}}</th>
+                <th scope="col" class="col">{{__('home.category')}}</th>
+                <th scope="col" class="col">{{__('home.price')}}</th>
+                <th scope="col" class="col">{{__('adminpage.stock')}}</th>
+                <th scope="col" class="col">{{__('home.actions')}}</th>
             </tr>
         </thead>
         <tbody>
