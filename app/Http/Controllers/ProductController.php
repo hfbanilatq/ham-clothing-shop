@@ -10,8 +10,8 @@ class ProductController extends Controller
     public function index()
     {
         $viewData = [];
-        $viewData["title"] = __('pagination.title');
-        $viewData["subtitle"] = "List of products";
+        $viewData["title"] = __('home.title');
+        $viewData["subtitle"] = __('sub.product');
         $viewData["products"] = Product::all();
         return view('product.index')->with("viewData", $viewData);
     }
@@ -19,8 +19,8 @@ class ProductController extends Controller
     public function show($id){ 
         $viewData = [];
         $product = Product::findOrFail($id);
-        $viewData["title"] = $product["name"]." - Online Store";
-        $viewData["subtitle"] = $product["name"]." - Product information";
+        $viewData["title"] = $product["name"].__('product.os');
+        $viewData["subtitle"] = $product["name"].__('product.pi');
         $viewData["product"] = $product;
         return view('product.show')->with("viewData", $viewData);    
     }
@@ -28,7 +28,7 @@ class ProductController extends Controller
     public function create()
     {
         $viewData = []; 
-        $viewData["title"] = "Create product";
+        $viewData["title"] = __('product.title.create.product');
         return view('product.create')->with("viewData",$viewData);
     }
 

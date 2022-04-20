@@ -39,7 +39,8 @@
             @else
                 <nav class="barnav d-flex justify-content-center p-3">
                     <ul class="bg-primary">
-                        <li><a href="{{ route('myaccount.orders') }}"> My Orders</a></li>
+                        <li><a href="{{ route('myaccount.orders') }}"> My Orders</a></li><br>
+                        <li><a href="{{ route('cart.index') }}"> Cart</a></li><br>
                         @admin
                         <li><a href="{{ route('admin.home.index') }}"> Admin Panel</a></li>
                         @endadmin

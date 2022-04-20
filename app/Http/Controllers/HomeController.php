@@ -20,7 +20,7 @@ class HomeController extends Controller
         $searchInput = $request->input('search');
                
         $viewData = [];
-        $viewData['title'] = "Products - Online Store";
+        $viewData['title'] = __('home.title');
         $viewData["categories"] = Category::all();
         $viewData['products'] = Product::where('name', 'LIKE', '%' . $searchInput . '%')
             

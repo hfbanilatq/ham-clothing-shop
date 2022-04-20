@@ -20,8 +20,8 @@ class CartController extends Controller
             $total = Product::sumPricesByQuantities($productsInCart, $productsInSession);
         }
         $viewData = [];
-        $viewData["title"] = "Cart - Online Store";
-        $viewData["subtitle"] = "Shopping Cart";
+        $viewData["title"] = __('cart.title.cart');
+        $viewData["subtitle"] = __('sub.cart');
         $viewData["total"] = $total;
         $viewData["disabled"] =  Auth::user()->getBalance() - $total < 0;
         $viewData["products"] = $productsInCart;
@@ -71,8 +71,8 @@ class CartController extends Controller
             Auth::user()->save();
             $request->session()->forget('products');
             $viewData = [];
-            $viewData["title"] = "Purchase - Online Store";
-            $viewData["subtitle"] = "Purchase Status";
+            $viewData["title"] = __('cart.title.purchase');
+            $viewData["subtitle"] = __('cart.sub.stat');
             $viewData["order"] = $order;
             return view('cart.purchase')->with("viewData", $viewData);
         } else {

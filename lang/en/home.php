@@ -1,6 +1,7 @@
 <?php 
 
 return [
+    'title' => 'Products - Online Store',
     'home' => 'HOME',
     'offerts' => 'OFFERTS',
     'products' => 'PRODUCTS',
