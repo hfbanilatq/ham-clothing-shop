@@ -11,7 +11,7 @@
                     </div>
                     <button type="submit" class="btn-list btn btn-info btn-search col-md-2">
                         <i class="bi-search"></i>
-                            {{__('home.search')}} ALAKDSfalsdkflaksdl
+                            {{__('home.search')}}
                     </button>
 
                 </div>

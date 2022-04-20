@@ -15,6 +15,8 @@ class Category extends Model
      * $this->attributes['id'] - int - contains the user primary key (id)
      * $this->attributes['description'] - string - contains the category description
      * $this->getProducts() - Products - contains the associated products
+     * $this->attributes['created_at'] - DateTime - the date when the category was created
+     * $this->attributes['updated_at'] - DateTime - the last update date
      */
 
     protected $fillable = [
@@ -64,5 +66,24 @@ class Category extends Model
     public function setProducts($products)
     {
         return $this->products = $products;
+    }
+    public function getCreatedAt()
+    {
+        return $this->attributes['created_at'];
+    }
+
+    public function setCreatedAt($createdAt)
+    {
+        $this->attributes['created_at'] = $createdAt;
+    }
+
+    public function getUpdatedAt()
+    {
+        return $this->attributes['updated_at'];
+    }
+
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->attributes['updated_at'] = $updatedAt;
     }
 }

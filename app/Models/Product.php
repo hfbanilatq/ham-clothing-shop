@@ -20,6 +20,8 @@ class Product extends Model
      * $this->attributes['quantity_in_stock'] - number - the number of available products in stock
      * $this->items - Item[] - contains the associated items
      * $this->category - Category - the category associated to this product
+     * $this->attributes['created_at'] - DateTime - the date when the product was created
+     * $this->attributes['updated_at'] - DateTime - the last update date
      */
 
     protected $fillable = [
@@ -161,5 +163,24 @@ class Product extends Model
     public function setItems($items)
     {
         $this->items = $items;
+    }
+    public function getCreatedAt()
+    {
+        return $this->attributes['created_at'];
+    }
+
+    public function setCreatedAt($createdAt)
+    {
+        $this->attributes['created_at'] = $createdAt;
+    }
+
+    public function getUpdatedAt()
+    {
+        return $this->attributes['updated_at'];
+    }
+
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->attributes['updated_at'] = $updatedAt;
     }
 }
