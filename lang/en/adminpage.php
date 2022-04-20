@@ -37,7 +37,6 @@ return [
     'welcome' => 'Welcome to the Admin Panel, use the sidebar to navigate between the different options.',
     'q.stock' => 'Quantitiy In Stock',
     'stock' => 'Stock',
-    'name' => 'Name',
     'size' => 'Size',
     'color' => 'Color',
         'color.white' => 'White',

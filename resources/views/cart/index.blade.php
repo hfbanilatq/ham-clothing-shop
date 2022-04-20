@@ -4,16 +4,16 @@
 @section('content')
     <div class="card">
         <div class="card-header">
-            Products in Cart
+            {{__('cart.products.cart')}}
         </div>
         <div class="card-body">
             <table class="table table-bordered table-striped text-center">
                 <thead>
                     <tr>
                         <th scope="col">ID</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Price</th>
-                        <th scope="col">Quantity</th>
+                        <th scope="col">{{__('home.name')}}</th>
+                        <th scope="col">{{__('home.price')}}</th>
+                        <th scope="col">{{__('home.quantity')}}</th>
                     </tr>
                 </thead>
                 <tbody>

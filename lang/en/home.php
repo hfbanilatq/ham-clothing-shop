@@ -19,10 +19,12 @@ return [
     'cart' => 'Cart',
     'logout' => 'Logout',
     
+    'name' => 'Name',
     'desc' => 'Description',
     'submit' => 'Submit',
     'actions' => 'Actions',
     'img' => 'Image',
     'price' => 'Price',
+    'quantity' => 'Quantity'
 ];
 ?>

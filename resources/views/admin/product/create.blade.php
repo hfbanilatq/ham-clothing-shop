@@ -18,7 +18,7 @@
                 <div class="row">
                     <div class="col">
                         <div class="mb-3 row">
-                            <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">{{__('adminpage.name')}}:</label>
+                            <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">{{__('home.name')}}:</label>
                             <div class="col-lg-10 col-md-6 col-sm-12">
                                 <input name="name" value="{{ old('name') }}" type="text" class="form-control">
                             </div>

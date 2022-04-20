@@ -33,7 +33,7 @@
         <thead class="thead-dark">
             <tr class="text-center row">
                 <th scope="col" class="col">Id</th>
-                <th scope="col" class="col">{{__('adminpage.name')}}</th>
+                <th scope="col" class="col">{{__('home.name')}}</th>
                 <th scope="col" class="col">{{__('home.category')}}</th>
                 <th scope="col" class="col">{{__('home.price')}}</th>
                 <th scope="col" class="col">{{__('adminpage.stock')}}</th>
