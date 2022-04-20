@@ -48,7 +48,7 @@ return [
     'img' => 'Image',
     'price' => 'Price',
     'quantity' => 'Quantity',
-    'add.cart' => 'Add to Cart'
-
-,];
+    'add.cart' => 'Add to Cart',
+    'dashboard' => 'Dashboard',
+];
 ?>
