@@ -25,7 +25,7 @@
             <figure>
                 <h3>{{ $product->getName() }}</h3>
                 <img src="{{ asset('/storage/' . $product->getImage()) }}" class="card-img-top">
-                <figcaption><a class="button-p" href="{{ route('product.show', ['id' => $product['id']]) }}">$
+                <figcaption><a class="button-p" href="{{ route('product.show', ['id' => $product->getId()]) }}">$
                         {{ $product->getPrice() }}
                     </a></figcaption>
             </figure>

@@ -14,7 +14,6 @@
                         <i class="bi-search"></i>
                         Search
                     </button>
-
                 </div>
             </form>
         </div>
@@ -36,15 +35,11 @@
             </tr>
         </thead>
         <tbody>
-
-
             @foreach ($viewData['categories'] as $category)
                 <tr class="text-center row">
                     <td class="col d-flex align-items-center justify-content-center">{{ $category->getId() }}</td>
                     <td class="col d-flex align-items-center justify-content-center">{{ $category->getDescription() }}
                     </td>
-
-
                     <td class="col d-flex align-items-center justify-content-center">
                         <div class="form-button-container">
                             <form action={{ route('admin.category.edit', ['id' => $category->getId()]) }}
@@ -71,5 +66,4 @@
             @endforeach
         </tbody>
     </table>
-
 @endsection

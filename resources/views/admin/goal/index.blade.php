@@ -15,7 +15,6 @@
                         <i class="bi-search"></i>
                         Search
                     </button>
-
                 </div>
             </form>
         </div>
@@ -29,7 +28,6 @@
             </form>
         </div>
     </div>
-
     <table class="table container">
         <thead class="thead-dark">
             <tr class="text-center row">
@@ -41,8 +39,6 @@
             </tr>
         </thead>
         <tbody>
-
-
             @foreach ($viewData['goals'] as $goal)
                 <tr class="text-center row">
                     <td class="col d-flex align-items-center justify-content-center">{{ $goal->getId() }}</td>
@@ -62,7 +58,6 @@
                                 </button>
                             </form>
                         </div>
-
                         <div class="form-button-container">
                             <form action="{{ route('admin.goal.delete', $goal->getId()) }}" method="post">
                                 @csrf
@@ -73,7 +68,6 @@
                             </form>
                         </div>
                     </td>
-
                 </tr>
             @endforeach
         </tbody>
