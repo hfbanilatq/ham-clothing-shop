@@ -17,7 +17,7 @@ class AdminCategoryController extends Controller
     {
         $viewData = [];
         $viewData["title"] = __('adminpage.title.category');
-        $viewData['search'] = '';
+        $viewData['search'] = __('home.search');
         $viewData["categories"] = Category::all();
         return view('admin.category.index')->with("viewData", $viewData);
     }
