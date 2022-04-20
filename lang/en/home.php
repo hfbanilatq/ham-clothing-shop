@@ -20,5 +20,6 @@ return [
     
     'desc' => 'Description',
     'submit' => 'Submit',
+    'actions' => 'Actions',
 ];
 ?>

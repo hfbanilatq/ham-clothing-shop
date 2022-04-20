@@ -13,7 +13,7 @@
                     </div>
                     <button type="submit" class="btn-list btn btn-info btn-search col-md-2">
                         <i class="bi-search"></i>
-                        Search
+                        {{__('home.search')}}
                     </button>
                 </div>
             </form>
@@ -22,7 +22,7 @@
             <form action={{ route('admin.goal.create') }} id="{{ 'form-create' }}" method="GET">
                 @csrf
                 <button type="submit" form="{{ 'form-create' }}" class="btn-list btn btn-info">
-                    Create new Goal
+                    {{__('adminpage.create.new.goal')}}
                     <i class="bi-plus-circle"></i>
                 </button>
             </form>
@@ -32,10 +32,10 @@
         <thead class="thead-dark">
             <tr class="text-center row">
                 <th scope="col" class="col">Id</th>
-                <th scope="col" class="col">Description</th>
-                <th scope="col" class="col">Cant Publications</th>
-                <th scope="col" class="col">Activable Discount</th>
-                <th scope="col" class="col">Action</th>
+                <th scope="col" class="col">{{__('home.desc')}}</th>
+                <th scope="col" class="col">{{__('adminpage.cant.publication')}}</th>
+                <th scope="col" class="col">{{__('adminpage.act.disc')}}</th>
+                <th scope="col" class="col">{{__('home.actions')}}</th>
             </tr>
         </thead>
         <tbody>

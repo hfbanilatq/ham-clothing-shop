@@ -3,7 +3,7 @@
 @section('content')
     <div class="card mb-4">
         <div class="card-header">
-            Create Products
+            {{__('adminpage.create.goal')}}
         </div>
         <div class="card-body">
             @if ($errors->any())
@@ -17,7 +17,7 @@
                 @csrf
                 <div class="col">
                     <div class="mb-3 row">
-                        <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Description</label>
+                        <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">{{__('home.desc')}}</label>
                         <div class="col-lg-10 col-md-6 col-sm-12">
                             <input name="description" value="{{ old('description') }}" type="text" class="form-control">
                         </div>
@@ -25,7 +25,7 @@
                 </div>
                 <div class="col">
                     <div class="mb-3 row">
-                        <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Cant Publications</label>
+                        <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">{{__('adminpage.cant.publication')}}</label>
                         <div class="col-lg-10 col-md-6 col-sm-12">
                             <input name="cant_publications" value="{{ old('cant_publications') }}" type="number" class="form-control">
                         </div>
@@ -33,14 +33,14 @@
                 </div>
                 <div class="col">
                     <div class="mb-3 row">
-                        <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">Activable Discount</label>
+                        <label class="col-lg-2 col-md-6 col-sm-12 col-form-label">{{__('adminpage.act.disc')}}</label>
                         <div class="col-lg-10 col-md-6 col-sm-12">
                             <input name="activable_discount" value="{{ old('activable_discount') }}" type="text" class="form-control">
                         </div>
                     </div>
                 </div>
             
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">{{__('home.submit')}}</button>
             </form>
         </div>
     </div>
