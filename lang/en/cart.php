@@ -13,6 +13,10 @@ return [
    'products.cart'=> 'Products in Cart',
    'p.complete' => 'Purchase Completed',
    'congrats' => 'Congratulations, purchase completed. Order number is ',
-   
+   'total.pay' => 'Total to pay',
+   'back' => 'Back',
+   'purchase' => 'Purchase',
+   'remove' => 'Remove all products from Cart',
+   'no.money' => 'You dont have enough money in your balance',
 ];
 ?>

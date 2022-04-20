@@ -29,23 +29,23 @@
             </table>
             <div class="row">
                 <div class="text-end">
-                    <a class="btn btn-outline-secondary mb-2"><b>Total to pay:</b> ${{ $viewData['total'] }}</a>
+                    <a class="btn btn-outline-secondary mb-2"><b>{{__('cart.total.pay')}}:</b> ${{ $viewData['total'] }}</a><br>
+                    <a href="{{route('product.index')}}" class="btn btn-primary">{{__('cart.back')}}<b></b></a>
                     @if (count($viewData['products']) > 0)
-
                     <form action="{{ route('cart.purchase') }}" method="GET">
                             <button type="submit" class="btn bg-primary text-white mb-2"
-                            {{ $viewData['disabled'] ? 'disabled' : '' }}>Purchase {{ $viewData['disabled'] }}</button>
+                            {{ $viewData['disabled'] ? 'disabled' : '' }}>{{__('cart.purchase')}} {{ $viewData['disabled'] }}</button>
                     </form>                       
 
                         <a href="{{ route('cart.delete') }}">
                             <button class="btn btn-danger mb-2">
-                                Remove all products from Cart
+                                {{__('cart.remove')}}
                             </button>
                         </a>
                     @endif
                     @if ($viewData['disabled'])
                     <div class="col red-text d-flex align-items-center justify-content-center">
-                        Doesn't have enough money in your balance</div>
+                        {{__('cart.no.money')}}</div>
                     @endif
 
                 </div>
