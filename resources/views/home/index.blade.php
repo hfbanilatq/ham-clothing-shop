@@ -23,10 +23,10 @@
     <div class="col-sm-4 bg-secondary mb-3 pb-3 pt-3">
         <center>
             <figure>
-                <h3>{{ $product['name'] }}</h3>
+                <h3>{{ $product->getName() }}</h3>
                 <img src="{{ asset('/storage/' . $product->getImage()) }}" class="card-img-top">
                 <figcaption><a class="button-p" href="{{ route('product.show', ['id' => $product['id']]) }}">$
-                        {{ $product['price'] }}
+                        {{ $product->getPrice() }}
                     </a></figcaption>
             </figure>
         </center>
