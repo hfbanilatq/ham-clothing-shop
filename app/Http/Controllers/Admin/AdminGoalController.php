@@ -57,6 +57,27 @@ class AdminGoalController extends Controller
 
         return back();
     }
+
+    public function edit($id)
+    {
+        $goalToEdit = Goal::findOrFail($id);
+        $viewData = [];
+        $viewData["title"] = __('adminpage.title.create.goal');
+        $viewData["goal"] = $goalToEdit;
+        return view('admin.goal.edit')->with("viewData", $viewData);
+    }
+
+    public function update(Request $request, $id) {
+        Goal::validate($request);
+        $goalToEdit = Goal::findOrFail($id);
+        $goalToEdit->setDescription($request->input('description'));
+        $goalToEdit->setCantPublications($request->input('cant_publications'));
+        $goalToEdit->setActivableDiscount($request->input('activable_discount'));
+        $goalToEdit->save();
+
+        return redirect()->route('admin.goal.index');
+    }
+
     public function destroy($id)
     {
         Goal::destroy($id);
