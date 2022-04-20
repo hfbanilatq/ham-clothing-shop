@@ -35,8 +35,7 @@
                     <form action="{{ route('cart.purchase') }}" method="GET">
                             <button type="submit" class="btn bg-primary text-white mb-2"
                             {{ $viewData['disabled'] ? 'disabled' : '' }}>Purchase {{ $viewData['disabled'] }}</button>
-                    </form>
-                        
+                    </form>                       
 
                         <a href="{{ route('cart.delete') }}">
                             <button class="btn btn-danger mb-2">

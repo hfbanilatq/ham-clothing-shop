@@ -15,8 +15,7 @@
                             Search
                         </button>
                     </div>
-                </form>
-  
+                </form>  
 </div>
 <div class="row bg-primary text-center m-2 mt-3 pt-3 ps-3">
     @foreach ($viewData['products'] as $product)
@@ -35,5 +34,4 @@
 </div>
 </div>
 </div>
-
 @endsection
