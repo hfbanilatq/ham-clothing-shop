@@ -1,6 +1,5 @@
 @extends('layouts.admin')
 
-@section('title', $viewData['title'])
 
 @section('content')
     <div class="row">
@@ -12,7 +11,7 @@
                     </div>
                     <button type="submit" class="btn-list btn btn-info btn-search col-md-2">
                         <i class="bi-search"></i>
-                            {{__('home.search')}}
+                            {{__('home.search')}} ALAKDSfalsdkflaksdl
                     </button>
 
                 </div>
