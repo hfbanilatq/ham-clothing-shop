@@ -67,7 +67,8 @@ class AdminGoalController extends Controller
         return view('admin.goal.edit')->with("viewData", $viewData);
     }
 
-    public function update(Request $request, $id) {
+    public function update(Request $request, $id)
+    {
         Goal::validate($request);
         $goalToEdit = Goal::findOrFail($id);
         $goalToEdit->setDescription($request->input('description'));

@@ -19,6 +19,7 @@
         "nunomaduro/collision": "^6.1",
         "phpunit/phpunit": "^9.5.10",
         "spatie/laravel-ignition": "^1.0",
+        "squizlabs/php_codesniffer": "^3.6",
         "sven/artisan-view": "^3.5"
     },
     "autoload": {
