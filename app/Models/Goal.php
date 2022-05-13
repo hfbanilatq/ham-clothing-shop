@@ -14,8 +14,10 @@ class Goal extends Model
      * GOAL ATTRIBUTES
      * $this->attributes['id'] - int - contains the goal primary key (id)
      * $this->attributes['description'] - string - contains the description of the goal
-     * $this->attributes['cant_publications'] - integer - contains quantity of publications of diferents product needed to complete the goal
-     * $this->attributes['activable_discount'] - float - the discount percent between 0 and 1 that will be activated after this goals is completed
+     * $this->attributes['cant_publications'] - integer - contains quantity of publications
+     * of diferents product needed to complete the goal
+     * $this->attributes['activable_discount'] - float - the discount percent between 0 and 1 that will
+     * activated after this goals is completed
      * $this->attributes['created_at'] - DateTime - the date when the goal was created
      * $this->attributes['updated_at'] - DateTime - the last update date
      * $this->getUsers() - User[] - the users completed this goal
