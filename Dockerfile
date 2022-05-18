@@ -13,3 +13,5 @@ RUN composer install \
 RUN a2enmod rewrite
 RUN service apache2 restart
 RUN chmod -R 777 storage
+RUN chmod -R 777 bootstrap/cache/
+RUN chmod -R ug+rwx storage bootstrap/cache
