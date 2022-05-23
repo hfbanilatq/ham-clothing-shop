@@ -6,6 +6,7 @@ return [
     'sub.order' => 'Mis Ordenes',
 
     //Orderview
-    'nothing' => 'Parece que no as realizado ninguna compra hasta el momento =(.'
+    'nothing' => 'Parece que no as realizado ninguna compra hasta el momento =(.',
+    'order.add-publication' => 'Añadir foto'
 ];
 ?>

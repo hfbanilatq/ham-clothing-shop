@@ -52,6 +52,5 @@ return [
     'dashboard' => 'Dashboard',
     
     'home.add-to-cart' => 'Add to cart',
-    'home.add.publication' => 'Add publication'
 ];
 ?>

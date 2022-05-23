@@ -56,22 +56,19 @@
                                                     </div>
                                                     @if ($loop->index === 0)
                                                         <a href="{{ '#carousel__slide' . (count($viewData['product']->getPublications()) - 1) }}"
-                                                            class="carousel__prev">Go to last slide</a>
+                                                            class="carousel__prev">{{__('go-last')}}</a>
                                                         <a href="{{ '#carousel__slide' . ($loop->index + 1) }}"
-                                                            class="carousel__next">Go to next slide</a>
+                                                            class="carousel__next">{{__('go-next')}}</a>
                                                     @else
                                                         @if ($loop->index === count($viewData['product']->getPublications()) - 1)
                                                             <a href="{{ '#carousel__slide' . ($loop->index - 1) }}"
-                                                                class="carousel__prev">Go to previus
-                                                                slide</a>
-                                                            <a href="#carousel__slide0" class="carousel__next">Go to next
-                                                                slide</a>
+                                                                class="carousel__prev">{{__('go-previous')}}</a>
+                                                            <a href="#carousel__slide0" class="carousel__next">{{__('go-first')}}</a>
                                                         @else
                                                             <a href="{{ '#carousel__slide' . ($loop->index - 1) }}"
-                                                                class="carousel__prev">Go to previus
-                                                                slide</a>
+                                                                class="carousel__prev">{{__('go-previous')}}</a>
                                                             <a href="{{ '#carousel__slide' . ($loop->index + 1) }}"
-                                                                class="carousel__next">Go to next slide</a>
+                                                                class="carousel__next">{{__('go-next')}}</a>
                                                         @endif
                                                     @endif
                                                 </div>
