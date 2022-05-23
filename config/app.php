@@ -30,6 +30,12 @@ return [
 
     'env' => env('APP_ENV', 'production'),
 
+
+    'available_locales' => [
+        'English' => 'en',
+        'Spanish' => 'es'
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Application Debug Mode

@@ -20,8 +20,8 @@ class ProductController extends Controller
     {
         $viewData = [];
         $product = Product::findOrFail($id);
-        $viewData["title"] = $product->getName().__('product.os');
-        $viewData["subtitle"] = $product->getName().__('product.pi');
+        $viewData["title"] = $product->getName() . __('product.os');
+        $viewData["subtitle"] = $product->getName() . __('product.pi');
         $viewData["product"] = $product;
         return view('product.show')->with("viewData", $viewData);
     }
@@ -36,7 +36,7 @@ class ProductController extends Controller
     public function save(Request $request)
     {
         Product::validate($request);
-        Product::create($request->only(["name","price"]));
+        Product::create($request->only(["name", "price"]));
         return back();
     }
 }

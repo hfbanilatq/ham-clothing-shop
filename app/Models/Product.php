@@ -167,6 +167,21 @@ class Product extends Model
     {
         $this->items = $items;
     }
+
+    public function publications()
+    {
+        return $this->hasMany(Publication::class);
+    }
+
+    public function getPublications()
+    {
+        return $this->publications;
+    }
+
+    public function setPublications($publications)
+    {
+        $this->items = $publications;
+    }
     public function getCreatedAt()
     {
         return $this->attributes['created_at'];

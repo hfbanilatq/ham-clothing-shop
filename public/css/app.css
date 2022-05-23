@@ -48,7 +48,7 @@ nav {
 
 .bg-third {
 
-    background-color: whitesmoke !important;
+    background-color: whitesmoke  !important;
 
 }
 
@@ -63,8 +63,9 @@ nav {
 }
 
 
-h2 {
-    color: whitesmoke;
+.container {
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
 nav {
@@ -73,9 +74,13 @@ nav {
 
 }
 
-.img-card {
+main {
+    min-height: 55vh;
+}
 
-    height: 5vw;
+.card-img {
+
+    max-height: 25vw;
 
     object-fit: cover;
 
@@ -102,7 +107,7 @@ nav {
 
 .barnav li a {
     display: block;
-    color: whitesmoke;
+    color: black;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
