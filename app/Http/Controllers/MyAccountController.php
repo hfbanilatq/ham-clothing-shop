@@ -1,9 +1,11 @@
 <?php
-//Jose Alejandro Sanchez 
+
 namespace App\Http\Controllers;
+
 use Illuminate\Http\Request;
 use App\Models\Order;
 use Illuminate\Support\Facades\Auth;
+
 class MyAccountController extends Controller
 {
     public function orders()

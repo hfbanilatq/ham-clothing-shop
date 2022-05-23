@@ -81,7 +81,8 @@ class AdminCategoryController extends Controller
      * @param  Numeric  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id) {
+    public function update(Request $request, $id)
+    {
         Category::validate($request);
 
         $categoryToEdit = Category::findOrFail($id);
