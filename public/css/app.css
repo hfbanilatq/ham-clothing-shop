@@ -36,7 +36,7 @@ nav {
 
 .bg-primary {
 
-    background-color: gray !important;
+    background-color: #EEE1DF !important;
 
 }
 
@@ -63,9 +63,6 @@ nav {
 }
 
 
-h2 {
-    color: whitesmoke;
-}
 
 nav {
 
@@ -73,9 +70,9 @@ nav {
 
 }
 
-.img-card {
+.card-img {
 
-    height: 5vw;
+    max-height: 25vw;
 
     object-fit: cover;
 
@@ -102,7 +99,7 @@ nav {
 
 .barnav li a {
     display: block;
-    color: whitesmoke;
+    color: black;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;

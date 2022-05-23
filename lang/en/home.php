@@ -50,5 +50,6 @@ return [
     'quantity' => 'Quantity',
     'add.cart' => 'Add to Cart',
     'dashboard' => 'Dashboard',
+    'home.add-to-cart' => 'Add to cart'
 ];
 ?>
