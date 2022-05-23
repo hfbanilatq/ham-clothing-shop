@@ -50,22 +50,24 @@ class CartController extends Controller
             $order = new Order();
             $order->setUserId($userId);
             $order->setTotal(0);
-            $order->save();
             $total = 0;
             $productsInCart = Product::findMany(array_keys($productsInSession));
+            $items = [];
             foreach ($productsInCart as $product) {
                 $quantity = $productsInSession[$product->getId()];
                 $item = new Item();
                 $item->setQuantity($quantity);
                 $item->setPrice($product->getPrice());
                 $item->setProductId($product->getId());
-                $item->setOrderId($order->getId());
                 $item->setTotalPrice($product->getPrice() * $quantity);
-                $item->save();
+                array_push($items, $item);
                 $total = $total + ($product->getPrice() * $quantity);
             }
             $order->setTotal($total);
-            $order->save();
+            if(count($items) > 0) {
+                $order->save();
+                $order->items()->saveMany($items);
+            }
             $newBalance = Auth::user()->getBalance() - $total;
             Auth::user()->setBalance($newBalance);
             Auth::user()->save();

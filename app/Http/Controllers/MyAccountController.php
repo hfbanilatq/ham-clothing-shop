@@ -13,7 +13,7 @@ class MyAccountController extends Controller
         $viewData = [];
         $viewData["title"] = __('orders.title.order');
         $viewData["subtitle"] = __('orders.sub.order');
-        $viewData["orders"] = Order::with(['items.product'])->where('user_id', Auth::user()->getId())->get();
+        $viewData["orders"] = Order::with(['items'])->where('user_id', Auth::user()->getId())->get();
         return view('myaccount.orders')->with("viewData", $viewData);
     }
 }

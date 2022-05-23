@@ -36,7 +36,7 @@ nav {
 
 .bg-primary {
 
-    background-color: #EEE1DF !important;
+    background-color: gray !important;
 
 }
 
@@ -48,7 +48,7 @@ nav {
 
 .bg-third {
 
-    background-color: whitesmoke !important;
+    background-color: whitesmoke  !important;
 
 }
 
@@ -63,11 +63,19 @@ nav {
 }
 
 
+.container {
+    padding-left: 10%;
+    padding-right: 10%;
+}
 
 nav {
 
     font-weight: 700;
 
+}
+
+main {
+    min-height: 55vh;
 }
 
 .card-img {

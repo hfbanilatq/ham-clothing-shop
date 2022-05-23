@@ -32,7 +32,7 @@
                                     <div class="price text-success">
                                         <h5 class="mt-4">${{ $product->getPrice() }}</h5>
                                     </div>
-                                    <a href="#" class="btn btn-danger mt-3"><i class="fas fa-shopping-cart"></i>
+                                    <a href="{{ route('product.show', ['id' => $product->getId()]) }}" class="btn btn-danger mt-3"><i class="fas fa-shopping-cart"></i>
                                         {{ __('home.add.cart') }}</a>
                                 </div>
                             </div>
