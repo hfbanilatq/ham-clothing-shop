@@ -11,6 +11,10 @@ return [
     'pi' => 'Información del producto',
 
     //ProductController-create
-    'title.create.product' => 'Crear producto'
+    'title.create.product' => 'Crear producto',
+    'go-previous' => 'Ir al anterior',
+    'go-next' => 'Ir al siguiente',
+    'go-first' => 'Ir al primero',
+    'go-last' => 'Ir al ultimo'
 ];
 ?>
