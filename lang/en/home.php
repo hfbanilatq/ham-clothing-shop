@@ -5,6 +5,8 @@ return [
     'ss' => 'SHOPPING STORE',
     'home' => 'HOME',
     'currency' => 'CURRENCY',
+    'cs' => 'Currency List',
+    'value' => 'Value',
     'offerts' => 'OFFERTS',
     'contact' => 'CONTACT',
     'products' => 'PRODUCTS',

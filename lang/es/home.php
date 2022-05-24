@@ -5,6 +5,8 @@ return [
     'ss' => 'SHOPPING STORE',
     'home' => 'INICIO',
     'currency' => 'MONEDAS',
+    'cs' => 'Lista de Monedas',
+    'value' => 'VALOR',
     'offerts' => 'OFERTAS',
     'contact' => 'CONTACTO',
     'products' => 'PRODUCTOS',
