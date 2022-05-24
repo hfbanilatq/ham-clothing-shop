@@ -16,7 +16,10 @@ class ImageLocalStorage implements ImageStorage
         if ($request->hasFile('image')) {
             $file = $request->file('image');
             $imageUniqueName = '' . Carbon::now()->timestamp . '.' . $file->getClientOriginalName();
-            $file->move(public_path(), '/img/', $imageUniqueName);
+            Storage::disk('public')->put(
+                $imageUniqueName,
+                file_get_contents($request->file('image')->getRealPath())
+            );
         }
 
         return $imageUniqueName;
