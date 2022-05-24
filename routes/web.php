@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CurrencyApi;
 
 Route::get('/', 'App\Http\Controllers\HomeController@index')->name("home.index");
 Route::get('/search', 'App\Http\Controllers\HomeController@search')->name("home.search");
@@ -17,7 +18,7 @@ Route::get('/publications/create/{id}', 'App\Http\Controllers\PublicationControl
 ->name("publication.create");
 
 Route::post('/publications/store/', 'App\Http\Controllers\PublicationController@store')->name("publication.store");
-Route::get('language/{locale}',  'App\Http\Controllers\LocaleController@locale')->name("language.locale");
+Route::get('language/{locale}', 'App\Http\Controllers\LocaleController@locale')->name("language.locale");
 
 
 Route::middleware('auth')->group(function () {
@@ -69,5 +70,8 @@ Route::middleware('admin')->group(function () {
     Route::put('/admin/goals/{id}/update', 'App\Http\Controllers\Admin\AdminGoalController@update')
         ->name("admin.goal.update");
 });
+
+//Route::get('/currency', 'App\Http\Controllers\CurrencyApi@index')->name("currency.index");
+Route::get("currency", [CurrencyApi::class,'index'])->name("currency.index");
 
 Auth::routes();

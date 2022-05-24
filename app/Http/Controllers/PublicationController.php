@@ -24,14 +24,13 @@ class PublicationController extends Controller
         $savedImageName = $storeInterface->store($request);
         if ($savedImageName !== null) {
             $publication->setImage($savedImageName);
-            $publication->setUserId( Auth::user()->getId());
+            $publication->setUserId(Auth::user()->getId());
             $publication->setProductId($request->input('productId'));
             $publication->setDescription($savedImageName);
             $publication->save();
         }
 
         return back()->with(__('home.success'));
-
     }
 
     /**

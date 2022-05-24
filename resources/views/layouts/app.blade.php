@@ -24,6 +24,7 @@
             <nav class="barnav d-flex justify-content-around">
                 <ul class="bg-primary">
                     <li><a href="{{ route('home.index') }}">{{ __('home.home') }}</a></li>
+                    <li><a href="{{ route('currency.index') }}">{{ __('home.currency') }}</a></li>
                 </ul>
                 @include('partials.languaje_switcher')
             </nav>
@@ -33,7 +34,7 @@
                 <nav class="barnav d-flex justify-content-center p-3">
                     <ul class="bg-primary">
                         <li><a href="{{ route('login') }}"> {{ __('home.login') }}</a></li>
-                        <li><a href="{{ route('register') }}">Register</a></li>
+                        <li><a href="{{ route('register') }}">{{ __('home.register') }}</a></li>
                     </ul>
                 </nav>
             @else

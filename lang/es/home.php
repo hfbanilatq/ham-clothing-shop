@@ -4,6 +4,7 @@ return [
     //General
     'ss' => 'SHOPPING STORE',
     'home' => 'INICIO',
+    'currency' => 'MONEDAS',
     'offerts' => 'OFERTAS',
     'contact' => 'CONTACTO',
     'products' => 'PRODUCTOS',
@@ -16,7 +17,7 @@ return [
 
     //login and logout
     'login' => 'Iniciar sesión',
-    'email' => 'Direcciónd de correo',
+    'email' => 'Dirección de correo',
     'pass' => 'Contraseña',
     'conf.pass' => 'Confirmar Contraseña',
     'remember' => 'Recordarme',

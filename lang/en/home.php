@@ -4,6 +4,7 @@ return [
     //General
     'ss' => 'SHOPPING STORE',
     'home' => 'HOME',
+    'currency' => 'CURRENCY',
     'offerts' => 'OFFERTS',
     'contact' => 'CONTACT',
     'products' => 'PRODUCTS',

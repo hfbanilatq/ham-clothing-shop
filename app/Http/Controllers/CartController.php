@@ -64,7 +64,7 @@ class CartController extends Controller
                 $total = $total + ($product->getPrice() * $quantity);
             }
             $order->setTotal($total);
-            if(count($items) > 0) {
+            if (count($items) > 0) {
                 $order->save();
                 $order->items()->saveMany($items);
             }
