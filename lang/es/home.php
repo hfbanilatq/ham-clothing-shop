@@ -11,11 +11,11 @@ return [
     'contact' => 'CONTACTO',
     'products' => 'PRODUCTOS',
     'categories' => 'CATEGORÍAS',
-    'category' => 'Categoría',
-    'order' => 'Orden',
-    'goals' => 'Metas',
-    'search' => 'Buscar',
-    'slo' => 'So that you can give the greatest potential, in the best style',
+    'category' => 'CATEGORIA',
+    'order' => 'ORDEN',
+    'goals' => 'METAS',
+    'search' => 'BUSCAR',
+    'slo' => 'Para que puedas dar tu mayor potencial al mejor estilo',
 
     //login and logout
     'login' => 'Iniciar sesión',
