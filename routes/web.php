@@ -13,7 +13,8 @@ Route::get('/cart/delete', 'App\Http\Controllers\CartController@delete')->name("
 Route::post('/cart/add/{id}', 'App\Http\Controllers\CartController@add')->name("cart.add");
 Route::get('/api/products', 'App\Http\Controllers\Api\ProductApi@index')->name("api.product.index");
 Route::get('/api/products/{id}', 'App\Http\Controllers\Api\ProductApi@show')->name("api.product.show");
-Route::get('/publications/create/{id}', 'App\Http\Controllers\PublicationController@create')->name("publication.create");
+Route::get('/publications/create/{id}', 'App\Http\Controllers\PublicationController@create')
+->name("publication.create");
 
 Route::post('/publications/store/', 'App\Http\Controllers\PublicationController@store')->name("publication.store");
 Route::get('language/{locale}',  'App\Http\Controllers\LocaleController@locale')->name("language.locale");
