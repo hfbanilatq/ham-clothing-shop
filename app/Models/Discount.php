@@ -99,8 +99,14 @@ class Discount extends Model
         $this->user = $user;
     }
 
+    public function setUserId($id)
+    {
+        $this->attributes['user_id'] = $id;
+    }
+
     public function getUser()
     {
         return $this->user;
     }
+    
 }

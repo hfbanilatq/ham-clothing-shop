@@ -42,5 +42,15 @@ class AppServiceProvider extends ServiceProvider
             $view->with('current_locale', app()->getLocale());
             $view->with('available_locales', config('app.available_locales'));
         });
+
+        view()->composer('home.index', function ($view) {
+            $view->with('storage_type', config('storagetype.storage_type'));
+        });
+        view()->composer('product.index', function ($view) {
+            $view->with('storage_type', config('storagetype.storage_type'));
+        });
+        view()->composer('product.show', function ($view) {
+            $view->with('storage_type', config('storagetype.storage_type'));
+        });
     }
 }

@@ -22,6 +22,7 @@ Route::get('language/{locale}',  'App\Http\Controllers\LocaleController@locale')
 Route::middleware('auth')->group(function () {
     Route::get('/cart/purchase', 'App\Http\Controllers\CartController@purchase')->name("cart.purchase");
     Route::get('/my-account/orders', 'App\Http\Controllers\MyAccountController@orders')->name("myaccount.orders");
+    Route::get('/my-account/orders/filter', 'App\Http\Controllers\MyAccountController@filterOrder')->name("orders.filter");
 });
 
 
