@@ -3,7 +3,19 @@
 @section('subtitle', $viewData['subtitle'])
 @section('content')
     <div class="container">
-
+        <div class="col-md-8">
+            <form action="{{ route('orders.filter') }}" method="GET">
+                <div class="row">
+                    <div class="col-md-6 mt-3">
+                        <input type="date" class="form-control" name="filter">
+                    </div>
+                    <button type="submit" class="btn-list btn btn-danger btn-search col-md-2">
+                        <i class="bi-search"></i>
+                        {{ __('home.search') }}
+                    </button>
+                </div>
+            </form>
+        </div>
         @forelse ($viewData["orders"] as $order)
             <div class="card mb-4">
                 <div class="card-header">

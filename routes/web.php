@@ -15,15 +15,17 @@ Route::post('/cart/add/{id}', 'App\Http\Controllers\CartController@add')->name("
 Route::get('/api/products', 'App\Http\Controllers\Api\ProductApi@index')->name("api.product.index");
 Route::get('/api/products/{id}', 'App\Http\Controllers\Api\ProductApi@show')->name("api.product.show");
 Route::get('/publications/create/{id}', 'App\Http\Controllers\PublicationController@create')
-->name("publication.create");
+    ->name("publication.create");
 
 Route::post('/publications/store/', 'App\Http\Controllers\PublicationController@store')->name("publication.store");
 Route::get('language/{locale}', 'App\Http\Controllers\LocaleController@locale')->name("language.locale");
-
+Route::get('/external/location', 'App\Http\Controllers\LocationController@locations')
+    ->name("external.locations");
 
 Route::middleware('auth')->group(function () {
     Route::get('/cart/purchase', 'App\Http\Controllers\CartController@purchase')->name("cart.purchase");
     Route::get('/my-account/orders', 'App\Http\Controllers\MyAccountController@orders')->name("myaccount.orders");
+    Route::get('/my-account/orders/filter', 'App\Http\Controllers\MyAccountController@filterOrder')->name("orders.filter");
 });
 
 
@@ -72,6 +74,6 @@ Route::middleware('admin')->group(function () {
 });
 
 //Route::get('/currency', 'App\Http\Controllers\CurrencyApi@index')->name("currency.index");
-Route::get("currency", [CurrencyApi::class,'index'])->name("currency.index");
+Route::get("currency", [CurrencyApi::class, 'index'])->name("currency.index");
 
 Auth::routes();

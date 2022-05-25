@@ -3,9 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Interfaces\ImageStorage;
+use App\Models\Discount;
+use App\Models\Goal;
 use App\Models\Publication;
+use DateInterval;
+use DateTime;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class PublicationController extends Controller
 {
@@ -33,14 +38,4 @@ class PublicationController extends Controller
         return back()->with(__('home.success'));
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Publication  $publication
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Publication $publication)
-    {
-        //
-    }
 }

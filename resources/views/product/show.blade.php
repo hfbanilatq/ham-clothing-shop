@@ -10,7 +10,10 @@
         <div class="card mb-3">
             <div class="row g-0">
                 <div class="col-md-4">
-                    <img src="{{ asset('/storage/' . $viewData['product']->getImage()) }}" class="img-fluid rounded-start">
+                    <img @if ($storage_type === 'gcp') src="{{ $viewData['product']->getImage() }}"
+                    @else
+                    src="{{ asset('/storage/' . $viewData['product']->getImage()) }}" @endif
+                        class="img-fluid rounded-start">
                 </div>
                 <div class="col-md-8">
                     <div class="container">
@@ -51,24 +54,28 @@
                                                 class="carousel__slide">
                                                 <div class="carousel__snapper">
                                                     <div>
-                                                        <img src="{{ asset('/storage/' . $publication->image) }}" alt=""
-                                                            class="img-responsive">
+                                                        <img class="carousel-img"
+                                                            @if ($storage_type === 'gcp') src="{{ $publication->getImage() }}"
+                                                        @else
+                                                        src="{{ asset('/storage/' . $publication->getImage()) }}" @endif
+                                                            alt="" class="img-responsive">
                                                     </div>
                                                     @if ($loop->index === 0)
                                                         <a href="{{ '#carousel__slide' . (count($viewData['product']->getPublications()) - 1) }}"
-                                                            class="carousel__prev">{{__('go-last')}}</a>
+                                                            class="carousel__prev">{{ __('go-last') }}</a>
                                                         <a href="{{ '#carousel__slide' . ($loop->index + 1) }}"
-                                                            class="carousel__next">{{__('go-next')}}</a>
+                                                            class="carousel__next">{{ __('go-next') }}</a>
                                                     @else
                                                         @if ($loop->index === count($viewData['product']->getPublications()) - 1)
                                                             <a href="{{ '#carousel__slide' . ($loop->index - 1) }}"
-                                                                class="carousel__prev">{{__('go-previous')}}</a>
-                                                            <a href="#carousel__slide0" class="carousel__next">{{__('go-first')}}</a>
+                                                                class="carousel__prev">{{ __('go-previous') }}</a>
+                                                            <a href="#carousel__slide0"
+                                                                class="carousel__next">{{ __('go-first') }}</a>
                                                         @else
                                                             <a href="{{ '#carousel__slide' . ($loop->index - 1) }}"
-                                                                class="carousel__prev">{{__('go-previous')}}</a>
+                                                                class="carousel__prev">{{ __('go-previous') }}</a>
                                                             <a href="{{ '#carousel__slide' . ($loop->index + 1) }}"
-                                                                class="carousel__next">{{__('go-next')}}</a>
+                                                                class="carousel__next">{{ __('go-next') }}</a>
                                                         @endif
                                                     @endif
                                                 </div>
