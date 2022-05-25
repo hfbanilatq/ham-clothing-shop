@@ -78,7 +78,8 @@ class Publication extends Model
         return $this->user;
     }
 
-    public function setUserId($id) {
+    public function setUserId($id)
+    {
         $this->attributes['user_id'] = $id;
     }
 
@@ -97,9 +98,8 @@ class Publication extends Model
         return $this->user;
     }
 
-    public function setProductId($id) {
+    public function setProductId($id)
+    {
         $this->attributes['product_id'] = $id;
     }
-
-
 }

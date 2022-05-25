@@ -7,6 +7,6 @@ return [
 
     //Orderview
     'nothing' => 'Seems to be that you have not purchased anything in our store =(.',
-    'order.add-publication' => 'Add publication'
+    'add-publication' => 'Add Image'
 ];
 ?>

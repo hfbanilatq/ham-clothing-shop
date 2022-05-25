@@ -31,7 +31,7 @@
                                 <th scope="col">{{ __('home.name') }}</th>
                                 <th scope="col">{{ __('home.price') }}</th>
                                 <th scope="col">{{ __('home.quantity') }}</th>
-                                <th scope="col">{{ __('order.add-publication') }}</th>
+                                <th scope="col">{{ __('orders.add-publication') }}</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -62,7 +62,7 @@
 
                                                             <button class="col-lg-4 col-md-6 col-sm- col-form-label"
                                                                 type="submit" class="btn btn-primary">
-                                                                {{ __('order.add-publication') }}</button>
+                                                                {{ __('orders.add-publication') }}</button>
                                                         </div>
                                                     </div>
                                                 </div>

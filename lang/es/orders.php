@@ -7,6 +7,6 @@ return [
 
     //Orderview
     'nothing' => 'Parece que no as realizado ninguna compra hasta el momento =(.',
-    'order.add-publication' => 'Añadir foto'
+    'add-publication' => 'Añadir Foto'
 ];
 ?>
