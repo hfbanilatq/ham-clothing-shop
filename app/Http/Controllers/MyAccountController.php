@@ -5,9 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Order;
 use Carbon\Carbon;
-use DateTime;
 use Illuminate\Support\Facades\Auth;
-use SebastianBergmann\Environment\Console;
 
 class MyAccountController extends Controller
 {
