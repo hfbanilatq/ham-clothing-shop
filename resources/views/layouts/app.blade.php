@@ -26,7 +26,7 @@
                     <li><a href="{{ route('home.index') }}">{{ __('home.home') }}</a></li>
                     <li><a href="{{ route('currency.index') }}">{{ __('home.currency') }}</a></li>
                     
-                    <li><a href="{{ route('external.locations') }}">{{ __('home.locations') }}</a></li>
+                    <li><a href="{{ route('external.locations') }}">{{ __('external.title') }}</a></li>
                 </ul>
                 @include('partials.languaje_switcher')
             </nav>
